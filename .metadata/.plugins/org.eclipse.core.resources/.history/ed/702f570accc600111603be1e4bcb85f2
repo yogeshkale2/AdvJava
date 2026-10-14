@@ -1,0 +1,88 @@
+package JDBC_PreparedStatement;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+
+public class PreparedStatementExample {
+
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://localhost:3306/classicmodels";
+		String username = "root";
+		String password = "root";
+		
+		
+		String sql = "update javaclass set studentname = '?' where studentid = ? " ;
+		
+		try (  Connection con = DriverManager.getConnection(url, username, password);
+				PreparedStatement stm = con.prepareStatement(sql);
+				)
+		{
+			stm.setString(2, "Professor"); // Fixed spelling of Professor
+            stm.setInt(1, 1);
+            
+			
+			int  rowsupdated = stm.executeUpdate();
+			System.out.println(rowsupdated);
+			
+			con.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	/*	String insertQuery = "INSERT INTO javaclass (studentid, studentname, salary) VALUES (?, ?, ?)";
+		
+		try (
+			    Connection con = DriverManager.getConnection(url, username, password);
+			    PreparedStatement stm = con.prepareStatement(insertQuery);
+			) {
+			
+			stm.setInt(1,112);
+			stm.setString(2,"Tokiyo");
+			stm.setDouble(3, 700000.00);
+			
+			int rowsAffected = stm.executeUpdate();
+			System.out.println("Insert rows successfully Affected : "+ rowsAffected);
+			
+			con.close();
+		
+		}catch (Exception  e) {
+			    e.printStackTrace();
+			}
+	*/
+		
+		
+	}
+}
+
+
+	
+
+

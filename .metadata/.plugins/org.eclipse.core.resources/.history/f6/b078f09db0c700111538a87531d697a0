@@ -1,0 +1,57 @@
+package Project_JDBC;
+import java.sql.*;
+import java.util.Scanner;
+
+		public class HotelReservationSystem {
+		    
+		   
+		    private static final String URL = "jdbc:mysql://localhost:3306/HotelDB";
+		    private static final String USER = "root";
+		    private static final String PASSWORD = "root "; 
+
+		    public static void main(String[] args) {
+		        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+		             Scanner scanner = new Scanner(System.in)) {
+		            
+		            System.out.println("Connected to the database successfully!");
+		            
+		            while (true) {
+		                System.out.println("\n--- Hotel Reservation System ---");
+		                System.out.println("1. Add Reservation");
+		                System.out.println("2. View Reservations");
+		                System.out.println("3. Update Reservation");
+		                System.out.println("4. Delete Reservation");
+		                System.out.println("5. Exit");
+		                System.out.print("Enter your choice: ");
+		                
+		                int choice = scanner.nextInt();
+		                scanner.nextLine(); // Consume newline
+		                
+		                switch (choice) {
+		                    case 1:
+		                        addReservation(conn, scanner);
+		                        break;
+		                    case 2:
+		                        viewReservations(conn);
+		                        break;
+		                    case 3:
+		                        updateReservation(conn, scanner);
+		                        break;
+		                    case 4:
+		                        deleteReservation(conn, scanner);
+		                        break;
+		                    case 5:
+		                        System.out.println("Exiting System...");
+		                        return;
+		                    default:
+		                        System.out.println("Invalid choice. Try again.");
+		                }
+		            }
+		        } catch (SQLException e) {
+		            System.out.println("Database error: " + e.getMessage());
+		        }
+		    }
+	
+	}
+
+}

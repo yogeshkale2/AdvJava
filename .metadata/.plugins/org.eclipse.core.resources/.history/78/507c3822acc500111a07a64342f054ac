@@ -1,0 +1,61 @@
+package JDBCDemoApp;
+
+import java.sql.*;
+
+public class JDBCConnectivity {
+
+	public static void main(String[] args) {
+
+		String url = "jdbc:mysql://localhost:3306/classicmodels";
+		String username = "root";
+		String password = "root";
+
+		
+		/*  //  INSERT Statement 
+		 
+		String insertQuery = "INSERT INTO javaclass (studentid, studentname, batch, salary) VALUES (101, 'Rahul Sharma', 'IT', 3500.00)";
+        
+        // Try-with-resources automatically closes the Connection and Statement
+        try (Connection con = DriverManager.getConnection(url, username, password);
+             Statement stmt = con.createStatement()) {
+             
+            int rowsInserted = stmt.executeUpdate(insertQuery);
+            System.out.println(rowsInserted + " row(s) inserted successfully.");
+            
+        } catch (SQLException e) {
+            System.err.println("Database connection or execution failed!");
+            e.printStackTrace();
+        }
+		  
+		  */
+		 
+
+		/*
+		 * // Update statement
+		 * 
+		 * String updateQuery = "UPDATE javaclass SET salary = 250 WHERE studentid = 1";
+		 * 
+		 * try (Connection con = DriverManager.getConnection(url, username, password);
+		 * Statement stmt = con.createStatement()) {
+		 * 
+		 * int rowsUpdated = stmt.executeUpdate(updateQuery);
+		 * System.out.println(rowsUpdated + " row(s) updated successfully.");
+		 * 
+		 * } catch (SQLException e) { e.printStackTrace(); }
+		 */
+
+		// Delete Statement 
+		
+		String deleteQuery = "ALTER TABLE javaclass DROP COLUMN batch";
+
+		try (Statement stmt = con.createStatement()) {
+		    // Execute the query. It will return 0 for an ALTER TABLE command.
+		    stmt.executeUpdate(deleteQuery);
+		    
+		    // Updated the print statement to reflect what actually happened
+		    System.out.println("Column 'batch' dropped successfully from javaclass table.");
+		} catch (SQLException e) {
+		    e.printStackTrace();
+		}
+	}
+}

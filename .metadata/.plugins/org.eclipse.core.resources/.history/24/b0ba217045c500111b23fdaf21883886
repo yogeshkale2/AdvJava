@@ -1,0 +1,37 @@
+package JDBCDemoApp;
+
+import java.sql.*;
+
+public class JDBCConnectivity {
+
+    public static void main(String[] args) {
+    	
+    	String url =  ("jdbc:mysql://localhost:3306/classicmodels");
+    	String username = "root";
+    	String password = "root";
+    	
+    	String selectQuery = "SELECT * FROM javaclass";
+
+    	// Create Statement and execute the query
+    	try (Statement stmt = conn.createStatement();
+    	     ResultSet rs = stmt.executeQuery(selectQuery)) {
+
+    	    System.out.println("--- Data from javaclass table ---");
+    	    
+    	    // Loop through the result set row by row
+    	    while (rs.next()) {
+    	        // You must change "id" and "name" to the actual column names in your table
+    	        int id = rs.getInt("id"); 
+    	        String name = rs.getString("name");
+    	        
+    	        // Print the data
+    	        System.out.println("ID: " + id + " | Name: " + name);
+    	    }
+    	    
+    	} catch (SQLException e) {
+    	    e.printStackTrace();
+    	}
+    	
+    }
+    
+}

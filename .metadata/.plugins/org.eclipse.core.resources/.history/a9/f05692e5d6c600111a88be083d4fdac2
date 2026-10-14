@@ -1,0 +1,10 @@
+package JDBC_PreparedStatement;
+
+public class PreparedStatementExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

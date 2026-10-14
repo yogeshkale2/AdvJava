@@ -1,0 +1,29 @@
+package JDBCDemoApp;
+
+import java.sql.*;
+
+public class JDBCConnectivity {
+
+    public static void main(String[] args) {
+    	
+    	String url =  ("jdbc:mysql://localhost:3306/classicmodels");
+    	String username = "root";
+    	String password = "root";
+    	
+    	try {
+    		// Class.forName("com.mysql.cj.jdbc.Driver");
+    		
+    		Connection con = DriverManager.getConnection(url, username , password );
+    		
+    		System.out.println("Databases Connected Successfully ...");
+    		)
+    	}
+    	
+    	 catch(Exception ex) {
+             
+             ex.printStackTrace();
+         }
+    	
+    }
+    
+}

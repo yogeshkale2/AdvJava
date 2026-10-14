@@ -9,63 +9,60 @@ public class JDBCConnectivity {
 		String url = "jdbc:mysql://localhost:3306/classicmodels";
 		String username = "root";
 		String password = "root";
-
 		
-		/*  //  INSERT Statement 
-		 
-		String insertQuery = "INSERT INTO javaclass (studentid, studentname, batch, salary) VALUES (101, 'Rahul Sharma', 'IT', 3500.00)";
-        
-     
-        try (Connection con = DriverManager.getConnection(url, username, password);
-             Statement stmt = con.createStatement()) {
-             
-            int rowsInserted = stmt.executeUpdate(insertQuery);
-            System.out.println(rowsInserted + " row(s) inserted successfully.");
-            
-        } catch (SQLException e) {
-            System.err.println("Database connection or execution failed!");
-            e.printStackTrace();
-        }
-		  
-		 */
-		 
-		
-		/*
-		  // Update statement
-		 
-		  String updateQuery = "UPDATE javaclass SET salary = 250 WHERE studentid = 1";
-		
-		  try (Connection con = DriverManager.getConnection(url, username, password);
-		  Statement stmt = con.createStatement()) {
-		  
-		  int rowsUpdated = stmt.executeUpdate(updateQuery);
-		  System.out.println(rowsUpdated + " row(s) updated successfully.");
-		  
-		  } catch (SQLException e) { e.printStackTrace(); }
-		
-		 */
-
-		
-	
-		
-		//Delete Statement 
-
-	 	String deleteQuery ="DELETE FROM javaclass WHERE studentid = 101";
+		// Statement Using Insert Record
+	/*	String sql = "INSERT INTO javaclass (studentid, studentname, salary) VALUES (20, 'Rahul', 55000.00)";
 
 		try (Connection con = DriverManager.getConnection(url, username, password);
-			     // 2. Now Java knows what 'con' is, so this will work
-			     Statement stmt = con.createStatement()) {
-			    
-			    stmt.executeUpdate(deleteQuery);
-			    System.out.println("Column 'batch' dropped successfully from javaclass table.");
-			    
-			    con.close();
-			    
-			} catch (SQLException e) {
-			    e.printStackTrace();
-			}
-			
-	
+		     
+		     Statement stm = con.createStatement()) {
+		    
+		  
+		    int insertQuery = stm.executeUpdate(sql);
+		    
+		    System.out.println("Rows inserted Successfully: " + insertQuery);
+		    
+		} catch(Exception e) {
+		    e.printStackTrace();
+		}
+	*/
 		
+		//  Statement Using Update Records 
+	/*	String sql = "UPDATE javaclass SET salary = 4500.00 WHERE studentid = 2";
+        
+        try (
+            Connection con = DriverManager.getConnection(url, username, password);
+          
+            Statement stm = con.createStatement() 
+        ) {
+            
+            int rowsUpdated = stm.executeUpdate(sql);
+            
+            System.out.println("Update Successful! Rows changed: " + rowsUpdated);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	
+	*/
+		// Statement using delete Records  
+		
+		String sql = "DELETE FROM javaclass WHERE studentid = 2";
+        
+        try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            Statement stm = con.createStatement()
+        ) {
+          
+            int rowsDeleted = stm.executeUpdate(sql);
+            
+            System.out.println("Delete Successful! Rows removed: " + rowsDeleted);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+		
+
 	}
 }

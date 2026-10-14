@@ -1,0 +1,63 @@
+package JDBCDemoApp;
+
+import java.sql.*;
+
+public class JDBCConnectivity {
+
+	public static void main(String[] args) {
+
+		String url = "jdbc:mysql://localhost:3306/classicmodels";
+		String username = "root";
+		String password = "root";
+		
+		// Statement Using Insert Record
+	/*	String sql = "INSERT INTO javaclass (studentid, studentname, salary) VALUES (20, 'Rahul', 55000.00)";
+
+		try (Connection con = DriverManager.getConnection(url, username, password);
+		     
+		     Statement stm = con.createStatement()) {
+		    
+		  
+		    int insertQuery = stm.executeUpdate(sql);
+		    
+		    System.out.println("Rows inserted Successfully: " + insertQuery);
+		    
+		} catch(Exception e) {
+		    e.printStackTrace();
+		}
+	*/
+		
+		// Update Statement 
+		String sql = "UPDATE javaclass SET salary = 4500.00 WHERE studentid = 96";
+        
+        try (
+            Connection con = DriverManager.getConnection(url, username, password);
+            // 1. Create a normal Statement
+            Statement stm = con.createStatement() 
+        ) {
+            // 2. Pass the SQL string directly into executeUpdate()
+            int rowsUpdated = stm.executeUpdate(sql);
+            
+            System.out.println("Update Successful! Rows changed: " + rowsUpdated);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+ 
+		
+		 
+	
+
+
+	}
+}

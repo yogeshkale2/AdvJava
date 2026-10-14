@@ -1,0 +1,32 @@
+package JDBCDemoApp;
+
+import java.sql.*;
+
+public class JDBCConnectivity {
+
+    public static void main(String[] args) {
+    	
+    	String url =  ("jdbc:mysql://localhost:3306/classicmodels");
+    	String username = "root";
+    	String password = "root";
+    	
+    	try (Connection conn = DriverManager.getConnection(url, user, password);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT id, name FROM employees")) {
+
+               // 4. Process the results
+               while (rs.next()) {
+                   int id = rs.getInt("id");
+                   String name = rs.getString("name");
+                   System.out.println("ID: " + id + ", Name: " + name);
+               }
+
+           }
+    		catch(Exception ex) {
+    			System.out.println("Databases Connection Failed ...");
+             ex.printStackTrace();
+         }
+    	
+    }
+    
+}
