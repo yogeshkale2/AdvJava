@@ -7,7 +7,7 @@ import java.util.List;
 public class ReservationDAO {
     private static final String URL = "jdbc:mysql://localhost:3306/HotelDB";
     private static final String USER = "root";
-    private static final String PASSWORD = "root"; // Removed the trailing space you had in your original code
+    private static final String PASSWORD = "root"; 
 
     // Method to get DB connection
     private Connection getConnection() throws SQLException {
@@ -87,3 +87,6 @@ public class ReservationDAO {
         }
     }
 }
+
+
+

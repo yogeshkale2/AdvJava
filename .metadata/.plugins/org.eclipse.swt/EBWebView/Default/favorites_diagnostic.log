@@ -137,3 +137,12 @@
 2026-10-14 08:46:01.052: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-10-14 08:46:01.052: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-10-14 09:43:55.744: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-14 18:08:00.254: [INFO] CurrentProfilePath: C:\Users\Hp\OneDrive\Desktop\AdvanceJava\JDBC\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-14 18:08:00.254: [INFO] Profiles total count: 1
+2026-10-14 18:08:00.254: [INFO] Profile: name=Profile 1 path=C:\Users\Hp\OneDrive\Desktop\AdvanceJava\JDBC\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-14T08:35:38.763Z
+2026-10-14 18:08:00.254: [INFO] LastUsedProfileDir: C:\Users\Hp\OneDrive\Desktop\AdvanceJava\JDBC\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-14 18:08:00.254: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\Hp\OneDrive\Desktop\AdvanceJava\JDBC\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-14T08:35:38.763Z
+2026-10-14 18:08:00.254: [INFO] OnDoneLoading sync enabled: 0
+2026-10-14 18:08:00.254: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-14 18:08:00.254: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-14 18:08:00.254: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

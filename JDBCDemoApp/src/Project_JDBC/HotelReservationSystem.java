@@ -21,7 +21,7 @@ public class HotelReservationSystem {
             System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -39,7 +39,7 @@ public class HotelReservationSystem {
                         System.out.print("Enter Check-out Date (YYYY-MM-DD): ");
                         Date checkOut = Date.valueOf(scanner.nextLine());
 
-                        Reservation newRes = new Reservation(name, room, contact, checkIn, checkOut);
+                        Reservation newRes = new Reservation(room, name, room, contact, checkIn, checkOut);
                         if (dao.addReservation(newRes)) {
                             System.out.println("Reservation added successfully!");
                         }
@@ -49,20 +49,21 @@ public class HotelReservationSystem {
                     break;
 
                 case 2:
-                    List<Reservation> reservations = dao.getAllReservations();
-                    System.out.println("\n--- Current Reservations ---");
-                    System.out.printf("%-5s | %-20s | %-6s | %-15s | %-12s | %-12s%n", 
-                                      "ID", "Guest Name", "Room", "Contact", "Check-In", "Check-Out");
-                    System.out.println("--------------------------------------------------------------------------------------");
+                	List<Reservation> reservations = dao.getAllReservations();
+
+                	System.out.println("\n--- Current Reservations ---");
+                	System.out.println("ID | Guest Name | Room | Contact | Check-In | Check-Out");
+                	System.out.println("-------------------------------------------------------------------------");
                     
                     for (Reservation res : reservations) {
-                        System.out.printf("%-5d | %-20s | %-6d | %-15s | %-12s | %-12s%n",
-                                res.getReservationId(),
-                                res.getGuestName(),
-                                res.getRoomNumber(),
-                                res.getContactNumber(),
-                                res.getCheckInDate().toString(),
-                                res.getCheckOutDate().toString());
+                        System.out.println(
+                            res.getReservationId() + " | " + 
+                            res.getGuestName() + " | " + 
+                            res.getRoomNumber() + " | " + 
+                            res.getContactNumber() + " | " + 
+                            res.getCheckInDate() + " | " + 
+                            res.getCheckOutDate()
+                        );
                     }
                     break;
 

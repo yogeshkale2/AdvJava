@@ -10,16 +10,9 @@ public class Reservation {
     private Date checkInDate;
     private Date checkOutDate;
 
-    // Constructor for creating a new reservation (without ID, as DB auto-generates it)
-    public Reservation(String guestName, int roomNumber, String contactNumber, Date checkInDate, Date checkOutDate) {
-        this.guestName = guestName;
-        this.roomNumber = roomNumber;
-        this.contactNumber = contactNumber;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-    }
-
-    // Constructor for retrieving from database (includes ID)
+   
+    	// Constructor 
+    
     public Reservation(int reservationId, String guestName, int roomNumber, String contactNumber, Date checkInDate, Date checkOutDate) {
         this.reservationId = reservationId;
         this.guestName = guestName;
@@ -30,6 +23,7 @@ public class Reservation {
     }
 
     // Getters and Setters
+    
     public int getReservationId() { return reservationId; }
     public void setReservationId(int reservationId) { this.reservationId = reservationId; }
     
@@ -48,3 +42,11 @@ public class Reservation {
     public Date getCheckOutDate() { return checkOutDate; }
     public void setCheckOutDate(Date checkOutDate) { this.checkOutDate = checkOutDate; }
 }
+
+
+
+
+
+
+
+
